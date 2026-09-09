@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vape cz | $VCZ — Bold Binance Energy on BNB Chain</title>
+    <meta
+      name="description"
+      content="vape cz brings bold Binance energy, smoky memes, and unstoppable BNB Chain vibes. Buy $VCZ with BNB."
+    />
+    <meta name="theme-color" content="#F0B90B" />
+    <meta property="og:title" content="vape cz | $VCZ" />
+    <meta
+      property="og:description"
+      content="vape cz brings bold Binance energy, smoky memes, and unstoppable BNB Chain vibes."
+    />
+    <meta property="og:image" content="banner.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="banner.png" />
+    <link rel="icon" href="logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bnb: {
+                yellow: "#F0B90B",
+                gold: "#FCD535",
+                pale: "#FFE27A",
+                deep: "#C99400",
+              },
+              navy: {
+                DEFAULT: "#0D1B2A",
+                card: "#152238",
+                mist: "#1B2A41",
+                deep: "#08111C",
+              },
+              tie: {
+                DEFAULT: "#6BA8D8",
+                glow: "#8EC4EC",
+              },
+              vapor: "#F7FBFF",
+            },
+            fontFamily: {
+              display: ["Bebas Neue", "Impact", "sans-serif"],
+              sans: ["Outfit", "system-ui", "sans-serif"],
+              mono: ["Share Tech Mono", "ui-monospace", "monospace"],
+            },
+            boxShadow: {
+              pod: "0 18px 40px rgba(13, 27, 42, 0.28)",
+              glow: "0 0 28px rgba(240, 185, 11, 0.55)",
+              vapor: "0 0 40px rgba(107, 168, 216, 0.35)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        --bnb: #f0b90b;
+        --gold: #fcd535;
+        --navy: #0d1b2a;
+        --tie: #6ba8d8;
+        --ca: "TBA";
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5.5rem;
+      }
+
+      body {
+        font-family: Outfit, system-ui, sans-serif;
+        color: #0d1b2a;
+        background-color: #f0b90b;
+        overflow-x: hidden;
+      }
+
+      ::selection {
+        background: #0d1b2a;
+        color: #fcd535;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #c99400;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(#0d1b2a, #1b2a41);
+        border-radius: 99px;
+        border: 2px solid #c99400;
+      }
+
+      .hex-grid {
+        background-image:
+          radial-gradient(ellipse 70% 50% at 12% 18%, rgba(252, 213, 53, 0.55), transparent 60%),
+          radial-gradient(ellipse 55% 45% at 88% 8%, rgba(107, 168, 216, 0.22), transparent 55%),
+          radial-gradient(ellipse 60% 50% at 80% 92%, rgba(13, 27, 42, 0.12), transparent 60%),
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='48' viewBox='0 0 84 48'%3E%3Cpath fill='none' stroke='%230D1B2A' stroke-opacity='0.07' stroke-width='1' d='M21 0l21 12v24L21 48 0 36V12zM63 0l21 12v24L63 48 42 36V12z'/%3E%3C/svg%3E");
+        background-size: auto, auto, auto, 84px 48px;
+      }
+
+      .smoke-layer {
+        pointer-events: none;
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+      }
+
+      .wisp {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(18px);
+        opacity: 0.45;
+        animation: drift 16s ease-in-out infinite;
+      }
+
+      .wisp-a {
+        width: 280px;
+        height: 180px;
+        left: -6%;
+        top: 12%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.7), transparent 70%);
+      }
+      .wisp-b {
+        width: 340px;
+        height: 220px;
+        right: -8%;
+        top: 38%;
+        background: radial-gradient(circle, rgba(247, 251, 255, 0.65), transparent 72%);
+        animation-delay: -5s;
+        animation-duration: 20s;
+      }
+      .wisp-c {
+        width: 260px;
+        height: 160px;
+        left: 35%;
+        bottom: 8%;
+        background: radial-gradient(circle, rgba(142, 196, 236, 0.35), transparent 70%);
+        animation-delay: -9s;
+      }
+
+      @keyframes drift {
+        0%,
+        100% {
+          transform: translate3d(0, 0, 0) scale(1);
+        }
+        50% {
+          transform: translate3d(40px, -28px, 0) scale(1.12);
+        }
+      }
+
+      .coil-glow {
+        animation: coil 3.2s ease-in-out infinite;
+      }
+
+      @keyframes coil {
+        0%,
+        100% {
+          filter: drop-shadow(0 0 10px rgba(240, 185, 11, 0.45)) drop-shadow(0 12px 24px rgba(13, 27, 42, 0.28));
+        }
+        50% {
+          filter: drop-shadow(0 0 28px rgba(107, 168, 216, 0.55)) drop-shadow(0 16px 32px rgba(13, 27, 42, 0.35));
+        }
+      }
+
+      .exhale {
+        animation: exhale 7s ease-in-out infinite;
+      }
+
+      @keyframes exhale {
+        0%,
+        100% {
+          opacity: 0.15;
+          transform: translateY(8px) scale(0.92);
+        }
+        50% {
+          opacity: 0.55;
+          transform: translateY(-18px) scale(1.08);
+        }
+      }
+
+      .ticker-track {
+        animation: ticker 28s linear infinite;
+      }
+
+      @keyframes ticker {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .pod {
+        border-radius: 2rem;
+        background: linear-gradient(180deg, #1b2a41 0%, #0d1b2a 100%);
+        box-shadow: 0 18px 40px rgba(13, 27, 42, 0.28), inset 0 1px 0 rgba(252, 213, 53, 0.18);
+        border: 1px solid rgba(252, 213, 53, 0.28);
+      }
+
+      .vape-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        border-radius: 999px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      }
+
+      .vape-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .vape-btn:active {
+        transform: translateY(1px);
+      }
+
+      .hit-line {
+        background: linear-gradient(90deg, transparent, #fcd535, #6ba8d8, #fcd535, transparent);
+        height: 3px;
+        opacity: 0.7;
+      }
+
+      #dexscreener-embed {
+        position: relative;
+        width: 100%;
+        padding-bottom: 125%;
+      }
+      @media (min-width: 1024px) {
+        #dexscreener-embed {
+          padding-bottom: 58%;
+        }
+      }
+      #dexscreener-embed iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .content {
+        position: relative;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body class="hex-grid antialiased">
+    <div class="smoke-layer" aria-hidden="true">
+      <span class="wisp wisp-a"></span>
+      <span class="wisp wisp-b"></span>
+      <span class="wisp wisp-c"></span>
+    </div>
+
+    <header class="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
+      <div
+        class="mx-auto flex max-w-6xl items-center justify-between gap-3 rounded-full border border-navy/20 bg-navy/90 px-3 py-2 shadow-pod backdrop-blur-xl"
+      >
+        <a href="#top" class="flex items-center gap-2 pl-1">
+          <img src="logo.png" alt="vape cz logo" class="h-11 w-11 rounded-full object-cover ring-2 ring-bnb-gold" />
+          <span class="hidden font-display text-2xl tracking-wide text-bnb-gold sm:block">VAPE CZ</span>
+        </a>
+        <nav class="hidden items-center gap-6 text-xs font-bold uppercase tracking-[0.22em] text-vapor/80 md:flex">
+          <a href="#about" class="hover:text-bnb-gold">About</a>
+          <a href="#howtobuy" class="hover:text-bnb-gold">How to Buy</a>
+          <a href="#chart" class="hover:text-bnb-gold">Chart</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <a
+            href="https://x.com/vapeczx"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-black ring-2 ring-bnb-gold"
+            aria-label="X"
+          >
+            <img src="x.png" alt="X" class="h-5 w-5 object-contain" />
+          </a>
+          <a
+            href="https://dexscreener.com/bsc/TBA"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="vape-btn hidden px-4 py-2 text-[11px] text-tie-glow ring-2 ring-tie sm:inline-flex"
+          >
+            Chart
+          </a>
+          <a
+            href="https://flap.sh/bnb/TBA"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="vape-btn bg-bnb-yellow px-4 py-2 text-[11px] text-navy shadow-glow"
+          >
+            Buy Now
+          </a>
+          <button
+            id="menu-btn"
+            class="flex h-10 w-10 items-center justify-center rounded-full text-bnb-gold ring-2 ring-bnb-gold md:hidden"
+            aria-label="Menu"
+          >
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4">
+              <path d="M4 6h10M4 9h10M4 12h10" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="mx-auto mt-2 hidden max-w-6xl rounded-3xl bg-navy/95 p-5 text-vapor md:hidden">
+        <div class="flex flex-col gap-3 font-bold uppercase tracking-widest">
+          <a href="#about">About</a>
+          <a href="#howtobuy">How to Buy</a>
+          <a href="#chart">Chart</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="mt-[4.6rem] overflow-hidden border-y border-navy/15 bg-navy text-bnb-gold">
+        <div class="ticker-track flex w-max gap-10 whitespace-nowrap py-2 font-display text-lg tracking-[0.28em]">
+          <span>VAPE CZ · $VCZ · BNB CHAIN · SMOKY MEMES · BINANCE ENERGY · UNSTOPPABLE VIBES · HIT THE PUMP ·</span>
+          <span>VAPE CZ · $VCZ · BNB CHAIN · SMOKY MEMES · BINANCE ENERGY · UNSTOPPABLE VIBES · HIT THE PUMP ·</span>
+        </div>
+      </div>
+
+      <main id="top">
+        <section class="relative mx-auto max-w-6xl px-4 pb-10 pt-10 sm:px-6 lg:pt-14">
+          <div class="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+            <div>
+              <p
+                class="inline-flex items-center gap-2 rounded-full bg-navy px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.32em] text-tie-glow ring-1 ring-tie/50"
+              >
+                <span class="h-2 w-2 rounded-full bg-bnb-gold shadow-glow"></span>
+                Live on BNB Chain
+              </p>
+              <h1 class="mt-5 font-display text-[4.4rem] leading-[0.86] text-navy sm:text-8xl lg:text-[7.4rem]">
+                VAPE
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-navy via-navy-mist to-tie">CZ</span>
+              </h1>
+              <p class="mt-2 font-display text-4xl tracking-[0.18em] text-navy/80 sm:text-5xl">$VCZ</p>
+              <p class="mt-5 max-w-xl text-lg font-medium leading-relaxed text-navy/80 sm:text-xl">
+                vape cz brings bold Binance energy, smoky memes, and unstoppable BNB Chain vibes.
+              </p>
+
+              <div class="mt-8 flex flex-wrap items-center gap-3">
+                <a
+                  href="https://flap.sh/bnb/TBA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="vape-btn bg-navy px-8 py-3.5 text-sm text-bnb-gold shadow-pod hover:bg-navy-deep"
+                >
+                  Buy Now
+                </a>
+                <a
+                  href="https://dexscreener.com/bsc/TBA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="vape-btn bg-transparent px-8 py-3.5 text-sm text-navy ring-2 ring-navy hover:bg-navy hover:text-bnb-gold"
+                >
+                  Chart
+                </a>
+              </div>
+
+              <div class="mt-8 flex max-w-xl items-stretch overflow-hidden rounded-full bg-navy shadow-pod ring-2 ring-bnb-gold">
+                <div class="min-w-0 flex-1 px-5 py-3">
+                  <p class="text-[10px] font-bold uppercase tracking-[0.32em] text-tie">Contract · Copy CA</p>
+                  <p id="ca-display" class="truncate font-mono text-lg text-bnb-gold sm:text-xl">TBA</p>
+                </div>
+                <button
+                  id="copy-ca"
+                  type="button"
+                  class="vape-btn rounded-none bg-bnb-yellow px-6 text-xs text-navy sm:px-8"
+                >
+                  Copy CA
+                </button>
+              </div>
+            </div>
+
+            <div class="relative mx-auto w-full max-w-md">
+              <div class="exhale pointer-events-none absolute -left-8 top-6 h-28 w-40 rounded-full bg-white/50 blur-2xl"></div>
+              <div class="exhale pointer-events-none absolute -right-4 bottom-16 h-24 w-36 rounded-full bg-tie/40 blur-2xl" style="animation-delay: -2.4s"></div>
+              <div class="absolute inset-6 rounded-full bg-gradient-to-br from-bnb-gold via-tie/40 to-navy/20 blur-2xl"></div>
+              <img
+                src="logo.png"
+                alt="vape cz — CZ hitting the vape"
+                class="coil-glow relative z-10 w-full rounded-[2.4rem] object-cover ring-4 ring-navy shadow-pod"
+              />
+              <div class="absolute -bottom-4 left-1/2 z-20 -translate-x-1/2 rounded-full bg-navy px-5 py-2 font-display text-xl tracking-[0.3em] text-bnb-gold shadow-glow">
+                TAKE A HIT
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="relative mx-auto max-w-6xl px-4 pb-6 sm:px-6">
+          <div class="overflow-hidden rounded-[2.2rem] border-[3px] border-navy shadow-pod">
+            <img src="banner.png" alt="vape cz banner — VCZ fire and smoke" class="h-[34vh] w-full object-cover sm:h-[46vh]" />
+          </div>
+        </section>
+
+        <section id="about" class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+          <div class="mb-10 max-w-2xl">
+            <p class="font-display text-xl tracking-[0.35em] text-navy/60">THE CLOUD</p>
+            <h2 class="font-display text-5xl leading-none text-navy sm:text-6xl">SMOKE THE NARRATIVE</h2>
+            <p class="mt-4 text-lg font-medium text-navy/75">
+              Navy suit. Gold chain energy. A little vapor on the lips. $VCZ is the BNB meme that inhales Binance heat and exhales unstoppable vibes.
+            </p>
+          </div>
+          <div class="grid gap-4 md:grid-cols-3">
+            <article class="pod p-7 text-vapor">
+              <p class="font-display text-3xl text-bnb-gold">BOLD</p>
+              <h3 class="mt-1 font-display text-2xl tracking-wide text-tie-glow">BINANCE ENERGY</h3>
+              <p class="mt-3 text-sm leading-relaxed text-vapor/75">
+                Yellow heat, CZ composure, and that signature BNB diamond pulse. The room fills up fast.
+              </p>
+            </article>
+            <article class="pod p-7 text-vapor">
+              <p class="font-display text-3xl text-bnb-gold">SMOKY</p>
+              <h3 class="mt-1 font-display text-2xl tracking-wide text-tie-glow">MEME CLOUDS</h3>
+              <p class="mt-3 text-sm leading-relaxed text-vapor/75">
+                One puff of culture. Glasses on, vape up, timeline fogged with $VCZ jokes that never quit.
+              </p>
+            </article>
+            <article class="pod p-7 text-vapor">
+              <p class="font-display text-3xl text-bnb-gold">CHAIN</p>
+              <h3 class="mt-1 font-display text-2xl tracking-wide text-tie-glow">BNB VIBES</h3>
+              <p class="mt-3 text-sm leading-relaxed text-vapor/75">
+                Built for BNB Smart Chain speed. Fund with BNB, take the hit, and ride the cloud.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="howtobuy" class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:py-14">
+          <div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="font-display text-xl tracking-[0.35em] text-navy/60">FOUR HITS</p>
+              <h2 class="font-display text-5xl leading-none text-navy sm:text-6xl">HOW TO BUY $VCZ</h2>
+              <p class="mt-3 max-w-xl text-lg font-medium text-navy/75">
+                Four easy hits. Wallet, BNB, Flap, then inhale $VCZ. Always verify the CA before you swap.
+              </p>
+            </div>
+            <a
+              href="https://flap.sh/bnb/TBA"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="vape-btn w-fit bg-navy px-7 py-3 text-sm text-bnb-gold shadow-pod"
+            >
+              Buy Now
+            </a>
+          </div>
+
+          <div class="relative grid gap-5 lg:grid-cols-4">
+            <div class="hit-line pointer-events-none absolute left-[8%] right-[8%] top-11 hidden lg:block"></div>
+
+            <article class="relative rounded-[1.8rem] border-[3px] border-navy bg-vapor/70 p-6 shadow-pod backdrop-blur-sm">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-navy font-display text-2xl text-bnb-gold shadow-glow">1</div>
+              <p class="text-3xl">👛</p>
+              <h3 class="mt-2 font-display text-3xl text-navy">GET A WALLET</h3>
+              <p class="mt-2 text-sm font-medium leading-relaxed text-navy/75">
+                Install <strong>MetaMask</strong> or <strong>Trust Wallet</strong>. Switch the network to <strong>BNB Smart Chain</strong> — that is your vape battery.
+              </p>
+            </article>
+
+            <article class="relative rounded-[1.8rem] border-[3px] border-navy bg-vapor/70 p-6 shadow-pod backdrop-blur-sm">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-navy font-display text-2xl text-bnb-gold shadow-glow">2</div>
+              <p class="text-3xl">🟡</p>
+              <h3 class="mt-2 font-display text-3xl text-navy">LOAD BNB</h3>
+              <p class="mt-2 text-sm font-medium leading-relaxed text-navy/75">
+                Buy <strong>BNB</strong> on Binance or any on-ramp, then send it to your wallet. No BNB, no cloud.
+              </p>
+            </article>
+
+            <article class="relative rounded-[1.8rem] border-[3px] border-navy bg-vapor/70 p-6 shadow-pod backdrop-blur-sm">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-navy font-display text-2xl text-bnb-gold shadow-glow">3</div>
+              <p class="text-3xl">🔗</p>
+              <h3 class="mt-2 font-display text-3xl text-navy">OPEN FLAP</h3>
+              <p class="mt-2 text-sm font-medium leading-relaxed text-navy/75">
+                Tap <strong>Buy Now</strong> to open <strong>Flap.sh</strong>. Connect the wallet and confirm you are on BNB Chain.
+              </p>
+            </article>
+
+            <article class="relative rounded-[1.8rem] border-[3px] border-navy bg-vapor/70 p-6 shadow-pod backdrop-blur-sm">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-navy font-display text-2xl text-bnb-gold shadow-glow">4</div>
+              <p class="text-3xl">💨</p>
+              <h3 class="mt-2 font-display text-3xl text-navy">SWAP $VCZ</h3>
+              <p class="mt-2 text-sm font-medium leading-relaxed text-navy/75">
+                Copy the <strong>CA</strong>, swap <strong>BNB → $VCZ</strong>, confirm the tx, and exhale. You are in the cloud.
+              </p>
+            </article>
+          </div>
+
+          <div class="mt-8 flex flex-col overflow-hidden rounded-[1.6rem] bg-navy shadow-pod ring-2 ring-bnb-gold sm:flex-row sm:items-center">
+            <div class="min-w-0 flex-1 px-6 py-5">
+              <p class="text-[10px] font-bold uppercase tracking-[0.32em] text-tie">Verify CA · no fake clouds</p>
+              <p id="ca-display-2" class="truncate font-mono text-2xl text-bnb-gold">TBA</p>
+            </div>
+            <button
+              id="copy-ca-2"
+              type="button"
+              class="vape-btn rounded-none bg-bnb-yellow px-8 py-5 text-sm text-navy"
+            >
+              Copy CA
+            </button>
+          </div>
+        </section>
+
+        <section id="chart" class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+          <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="font-display text-xl tracking-[0.35em] text-navy/60">THE BOARD</p>
+              <h2 class="font-display text-5xl leading-none text-navy sm:text-6xl">$VCZ CHART</h2>
+              <p class="mt-3 max-w-xl font-medium text-navy/75">Live Dexscreener candles, embedded in the cloud chamber.</p>
+            </div>
+            <a
+              href="https://dexscreener.com/bsc/TBA"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="vape-btn w-fit px-7 py-3 text-sm text-navy ring-2 ring-navy hover:bg-navy hover:text-bnb-gold"
+            >
+              Open Chart
+            </a>
+          </div>
+          <div class="overflow-hidden rounded-[2rem] border-[3px] border-navy bg-navy-deep shadow-pod">
+            <div class="flex items-center justify-between bg-navy px-5 py-3">
+              <p class="text-xs font-extrabold uppercase tracking-[0.28em] text-bnb-gold">$VCZ / BNB · Dexscreener</p>
+              <span class="text-xs font-extrabold uppercase tracking-[0.28em] text-tie">Live vapor</span>
+            </div>
+            <div id="dexscreener-embed">
+              <iframe
+                title="vape cz $VCZ Dexscreener chart"
+                src="https://dexscreener.com/bsc/TBA?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartTheme=dark&theme=dark&chartStyle=1&chartType=usd&interval=15"
+              ></iframe>
+            </div>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
+          <div class="pod relative overflow-hidden p-8 md:p-12">
+            <div class="exhale pointer-events-none absolute -right-10 top-0 h-40 w-56 rounded-full bg-tie/25 blur-3xl"></div>
+            <div class="grid items-center gap-10 md:grid-cols-[1.15fr_0.85fr]">
+              <div>
+                <p class="font-display text-xl tracking-[0.35em] text-tie">JOIN THE CLOUD</p>
+                <h2 class="mt-2 font-display text-5xl leading-none text-bnb-gold sm:text-6xl">EXHALE WITH CZ</h2>
+                <p class="mt-4 max-w-xl text-lg font-medium text-vapor/80">
+                  vape cz brings bold Binance energy, smoky memes, and unstoppable BNB Chain vibes. Copy the CA, hit Buy Now, and stay in the fog.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-3">
+                  <a
+                    href="https://x.com/vapeczx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="vape-btn bg-black px-5 py-3 text-xs text-white ring-2 ring-bnb-gold"
+                  >
+                    <img src="x.png" alt="" class="h-5 w-5 object-contain" />
+                    @vapeczx
+                  </a>
+                  <a
+                    href="https://flap.sh/bnb/TBA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="vape-btn bg-bnb-yellow px-6 py-3 text-xs text-navy shadow-glow"
+                  >
+                    Buy Now
+                  </a>
+                </div>
+              </div>
+              <img
+                src="logo.png"
+                alt="vape cz mascot"
+                class="mx-auto w-56 rounded-[2rem] object-cover ring-4 ring-bnb-gold md:w-72"
+              />
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t border-navy/20 bg-navy text-vapor">
+        <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+          <div class="flex items-center gap-3">
+            <img src="logo.png" alt="" class="h-12 w-12 rounded-full object-cover ring-2 ring-bnb-gold" />
+            <div>
+              <p class="font-display text-2xl tracking-wide text-bnb-gold">VAPE CZ</p>
+              <p class="text-[11px] font-bold uppercase tracking-[0.28em] text-tie">$VCZ · BNB CHAIN</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <a
+              href="https://x.com/vapeczx"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-black ring-2 ring-bnb-gold"
+            >
+              <img src="x.png" alt="X" class="h-5 w-5 object-contain" />
+            </a>
+            <a
+              href="https://dexscreener.com/bsc/TBA"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="vape-btn px-4 py-2 text-xs text-tie-glow ring-2 ring-tie"
+            >
+              Chart
+            </a>
+            <a
+              href="https://flap.sh/bnb/TBA"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="vape-btn bg-bnb-yellow px-4 py-2 text-xs text-navy"
+            >
+              Buy Now
+            </a>
+          </div>
+        </div>
+        <p class="px-4 pb-8 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-vapor/40">
+          $VCZ is a meme. Not financial advice. DYOR. Exhale at your own risk.
+        </p>
+      </footer>
+    </div>
+
+    <div
+      id="toast"
+      class="pointer-events-none fixed bottom-6 left-1/2 z-[60] -translate-x-1/2 rounded-full bg-navy px-5 py-2 font-display text-lg tracking-widest text-bnb-gold opacity-0 shadow-glow transition"
+    >
+      CA COPIED
+    </div>
+
+    <script>
+      const CA = "TBA";
+      const toast = document.getElementById("toast");
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      async function copyCA(button) {
+        try {
+          await navigator.clipboard.writeText(CA);
+        } catch (err) {
+          const area = document.createElement("textarea");
+          area.value = CA;
+          document.body.appendChild(area);
+          area.select();
+          document.execCommand("copy");
+          area.remove();
+        }
+        const original = button.textContent;
+        button.textContent = "Copied";
+        toast.classList.remove("opacity-0");
+        toast.classList.add("opacity-100");
+        setTimeout(() => {
+          button.textContent = original;
+          toast.classList.add("opacity-0");
+          toast.classList.remove("opacity-100");
+        }, 1600);
+      }
+
+      document.getElementById("copy-ca").addEventListener("click", (e) => copyCA(e.currentTarget));
+      document.getElementById("copy-ca-2").addEventListener("click", (e) => copyCA(e.currentTarget));
+      menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+      });
+    </script>
+  </body>
+</html>
