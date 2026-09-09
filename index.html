@@ -14,16 +14,16 @@
       property="og:description"
       content="vape cz brings bold Binance energy, smoky memes, and unstoppable BNB Chain vibes."
     />
-    <meta property="og:image" content="banner.png" />
+    <meta property="og:image" content="banner.jpg" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="banner.png" />
+    <meta name="twitter:image" content="banner.jpg" />
     <link rel="icon" href="logo.png" type="image/png" />
     <link rel="apple-touch-icon" href="logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Smokum&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -51,9 +51,9 @@
               vapor: "#F7FBFF",
             },
             fontFamily: {
-              display: ["Bebas Neue", "Impact", "sans-serif"],
-              sans: ["Outfit", "system-ui", "sans-serif"],
-              mono: ["Share Tech Mono", "ui-monospace", "monospace"],
+              display: ["Smokum", "cursive"],
+              sans: ["Smokum", "cursive"],
+              mono: ["Smokum", "cursive"],
             },
             boxShadow: {
               pod: "0 18px 40px rgba(13, 27, 42, 0.28)",
@@ -78,11 +78,39 @@
         scroll-padding-top: 5.5rem;
       }
 
+      * {
+        cursor: url("vape-cursor.svg") 4 3, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='none'%3E%3Ccircle cx='7' cy='5' r='4.2' fill='%23fff' opacity='.55'/%3E%3Ccircle cx='3.6' cy='3.2' r='2.6' fill='%23fff' opacity='.35'/%3E%3Ccircle cx='9.2' cy='2.4' r='2' fill='%23fff' opacity='.28'/%3E%3Cg transform='rotate(42 16 18)'%3E%3Crect x='12.2' y='6' width='7.6' height='22' rx='3.6' fill='%230D1B2A' stroke='%23FCD535' stroke-width='1.4'/%3E%3Crect x='13.2' y='7.2' width='5.6' height='6.2' rx='2.4' fill='%23F0B90B'/%3E%3Ccircle cx='16' cy='10.2' r='1.15' fill='%230D1B2A'/%3E%3Crect x='14.2' y='24.6' width='3.6' height='3.2' rx='1' fill='%23FCD535'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") 4 3, auto !important;
+      }
+
+      a,
+      button,
+      [role="button"],
+      input,
+      label,
+      summary {
+        cursor: url("vape-cursor.svg") 4 3, pointer !important;
+      }
+
       body {
-        font-family: Outfit, system-ui, sans-serif;
+        font-family: Smokum, cursive;
         color: #0d1b2a;
         background-color: #f0b90b;
         overflow-x: hidden;
+        line-height: 1.45;
+        cursor: url("vape-cursor.svg") 4 3, auto;
+      }
+
+      button,
+      a,
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      span,
+      li,
+      input {
+        font-family: Smokum, cursive;
       }
 
       ::selection {
@@ -269,6 +297,313 @@
         position: relative;
         z-index: 1;
       }
+
+      /* Smoke type treatment */
+      .smoke-text {
+        text-shadow:
+          0 0 10px rgba(255, 255, 255, 0.35),
+          3px 8px 18px rgba(13, 27, 42, 0.22),
+          -4px -10px 22px rgba(247, 251, 255, 0.28);
+        animation: smoke-type 5.5s ease-in-out infinite;
+      }
+
+      .smoke-text-gold {
+        text-shadow:
+          0 0 12px rgba(252, 213, 53, 0.55),
+          0 8px 20px rgba(13, 27, 42, 0.35),
+          0 -12px 24px rgba(255, 255, 255, 0.25);
+        animation: smoke-type 6s ease-in-out infinite;
+      }
+
+      @keyframes smoke-type {
+        0%,
+        100% {
+          letter-spacing: 0.04em;
+          filter: blur(0);
+        }
+        50% {
+          letter-spacing: 0.09em;
+          filter: blur(0.15px);
+        }
+      }
+
+      /* Section / card vapor reveals */
+      .smoke-reveal {
+        opacity: 0;
+        transform: translateY(32px) scale(0.96);
+        filter: blur(12px);
+        transition: opacity 0.95s cubic-bezier(0.22, 1, 0.36, 1), transform 0.95s cubic-bezier(0.22, 1, 0.36, 1), filter 0.95s ease;
+      }
+
+      .smoke-reveal.is-in {
+        opacity: 1;
+        transform: none;
+        filter: none;
+      }
+
+      .d1 { transition-delay: 0.08s; }
+      .d2 { transition-delay: 0.18s; }
+      .d3 { transition-delay: 0.28s; }
+      .d4 { transition-delay: 0.38s; }
+
+      .smoke-float {
+        animation: smoke-float 5.2s ease-in-out infinite;
+      }
+
+      @keyframes smoke-float {
+        0%,
+        100% { transform: translateY(0) rotate(-0.6deg); }
+        50% { transform: translateY(-12px) rotate(0.8deg); }
+      }
+
+      .smoke-bob {
+        animation: smoke-bob 4.4s ease-in-out infinite;
+      }
+
+      @keyframes smoke-bob {
+        0%,
+        100% { transform: translateY(0) scale(1); }
+        50% { transform: translateY(-7px) scale(1.015); }
+      }
+
+      .nav-smoke {
+        animation: nav-haze 6s ease-in-out infinite;
+      }
+
+      @keyframes nav-haze {
+        0%,
+        100% { box-shadow: 0 12px 30px rgba(13, 27, 42, 0.35), 0 0 0 1px rgba(252, 213, 53, 0.12); }
+        50% { box-shadow: 0 16px 40px rgba(255, 255, 255, 0.18), 0 0 28px rgba(252, 213, 53, 0.28); }
+      }
+
+      header nav a,
+      #mobile-menu a {
+        position: relative;
+        transition: color 0.25s ease, text-shadow 0.25s ease;
+      }
+
+      header nav a::after,
+      #mobile-menu a::after {
+        content: "";
+        position: absolute;
+        left: 10%;
+        right: 10%;
+        bottom: -6px;
+        height: 7px;
+        border-radius: 999px;
+        background: radial-gradient(ellipse, rgba(255, 255, 255, 0.7), transparent 70%);
+        filter: blur(3px);
+        opacity: 0;
+        transform: scaleX(0.4);
+        transition: 0.3s ease;
+      }
+
+      header nav a:hover,
+      #mobile-menu a:hover {
+        text-shadow: 0 0 12px rgba(252, 213, 53, 0.8), 0 -8px 16px rgba(255, 255, 255, 0.35);
+      }
+
+      header nav a:hover::after,
+      #mobile-menu a:hover::after {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+
+      .vape-btn {
+        position: relative;
+        overflow: hidden;
+        animation: btn-haze 4.8s ease-in-out infinite;
+      }
+
+      .vape-btn::before {
+        content: "";
+        position: absolute;
+        inset: -40% auto auto -20%;
+        width: 70%;
+        height: 160%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.45), transparent 68%);
+        filter: blur(10px);
+        animation: btn-puff 3.6s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      @keyframes btn-haze {
+        0%,
+        100% { box-shadow: 0 8px 18px rgba(13, 27, 42, 0.22); }
+        50% { box-shadow: 0 10px 28px rgba(255, 255, 255, 0.28), 0 0 22px rgba(252, 213, 53, 0.35); }
+      }
+
+      @keyframes btn-puff {
+        0% { transform: translate(-10%, 20%) scale(0.7); opacity: 0.15; }
+        50% { transform: translate(40%, -30%) scale(1.2); opacity: 0.55; }
+        100% { transform: translate(90%, -60%) scale(1.5); opacity: 0; }
+      }
+
+      .vape-btn:hover {
+        transform: translateY(-3px) scale(1.04);
+        filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.45));
+      }
+
+      .pod,
+      .smoke-card {
+        position: relative;
+        overflow: hidden;
+        animation: card-breathe 6s ease-in-out infinite;
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+      }
+
+      .pod::after,
+      .smoke-card::after {
+        content: "";
+        position: absolute;
+        width: 140px;
+        height: 90px;
+        right: -20px;
+        bottom: -10px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.28), transparent 70%);
+        filter: blur(14px);
+        animation: card-wisp 5.5s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      @keyframes card-breathe {
+        0%,
+        100% { box-shadow: 0 18px 40px rgba(13, 27, 42, 0.28), inset 0 1px 0 rgba(252, 213, 53, 0.18); }
+        50% { box-shadow: 0 22px 48px rgba(255, 255, 255, 0.16), 0 0 24px rgba(107, 168, 216, 0.18), inset 0 1px 0 rgba(252, 213, 53, 0.3); }
+      }
+
+      @keyframes card-wisp {
+        0%,
+        100% { transform: translate(0, 8px) scale(0.85); opacity: 0.25; }
+        50% { transform: translate(-24px, -28px) scale(1.25); opacity: 0.7; }
+      }
+
+      .pod:hover,
+      .smoke-card:hover {
+        transform: translateY(-8px) rotate(-0.4deg);
+      }
+
+      .hit-line {
+        animation: hit-flow 2.8s linear infinite;
+        background-size: 200% 100%;
+        background-image: linear-gradient(90deg, transparent, #fcd535, #ffffff, #6ba8d8, #fcd535, transparent);
+      }
+
+      @keyframes hit-flow {
+        from { background-position: 0% 0; }
+        to { background-position: 200% 0; }
+      }
+
+      .step-num {
+        animation: coil 2.8s ease-in-out infinite;
+      }
+
+      .banner-wrap {
+        position: relative;
+        animation: smoke-float 7s ease-in-out infinite;
+      }
+
+      .banner-wrap::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(ellipse at 20% 80%, rgba(255, 255, 255, 0.28), transparent 45%),
+          radial-gradient(ellipse at 80% 20%, rgba(13, 27, 42, 0.12), transparent 40%);
+        animation: banner-haze 8s ease-in-out infinite;
+      }
+
+      @keyframes banner-haze {
+        0%,
+        100% { opacity: 0.45; transform: scale(1); }
+        50% { opacity: 0.85; transform: scale(1.04); }
+      }
+
+      .ca-shell {
+        animation: ca-pulse 3.4s ease-in-out infinite;
+      }
+
+      @keyframes ca-pulse {
+        0%,
+        100% { box-shadow: 0 0 0 2px #fcd535, 0 12px 28px rgba(13, 27, 42, 0.28); }
+        50% { box-shadow: 0 0 18px 2px rgba(255, 255, 255, 0.45), 0 0 28px rgba(252, 213, 53, 0.55); }
+      }
+
+      .live-dot {
+        animation: live-dot 1.6s ease-in-out infinite;
+      }
+
+      @keyframes live-dot {
+        0%,
+        100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(252, 213, 53, 0.6); }
+        50% { transform: scale(1.25); box-shadow: 0 0 0 8px rgba(252, 213, 53, 0); }
+      }
+
+      .chart-frame {
+        animation: card-breathe 7s ease-in-out infinite;
+      }
+
+      .icon-smoke {
+        animation: smoke-bob 3.8s ease-in-out infinite;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .icon-smoke:hover {
+        transform: scale(1.12) rotate(-8deg);
+        box-shadow: 0 0 18px rgba(255, 255, 255, 0.45);
+      }
+
+      footer {
+        position: relative;
+        overflow: hidden;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        inset: auto 10% -30px 10%;
+        height: 80px;
+        border-radius: 50%;
+        background: radial-gradient(ellipse, rgba(255, 255, 255, 0.22), transparent 70%);
+        filter: blur(12px);
+        animation: card-wisp 7s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .plume,
+        #smoke-canvas,
+        .smoke-text,
+        .smoke-text-gold,
+        .smoke-float,
+        .smoke-bob,
+        .nav-smoke,
+        .vape-btn,
+        .vape-btn::before,
+        .pod,
+        .pod::after,
+        .smoke-card,
+        .smoke-card::after,
+        .hit-line,
+        .step-num,
+        .banner-wrap,
+        .banner-wrap::after,
+        .ca-shell,
+        .live-dot,
+        .chart-frame,
+        .icon-smoke,
+        footer::before {
+          animation: none !important;
+        }
+
+        .smoke-reveal {
+          opacity: 1;
+          transform: none;
+          filter: none;
+        }
+      }
     </style>
   </head>
   <body class="hex-grid antialiased">
@@ -286,11 +621,11 @@
 
     <header class="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
       <div
-        class="mx-auto flex max-w-6xl items-center justify-between gap-3 rounded-full border border-navy/20 bg-navy/90 px-3 py-2 shadow-pod backdrop-blur-xl"
+        class="nav-smoke mx-auto flex max-w-6xl items-center justify-between gap-3 rounded-full border border-navy/20 bg-navy/90 px-3 py-2 shadow-pod backdrop-blur-xl"
       >
         <a href="#top" class="flex items-center gap-2 pl-1">
-          <img src="logo.png" alt="vape cz logo" class="h-11 w-11 rounded-full object-cover ring-2 ring-bnb-gold" />
-          <span class="hidden font-display text-2xl tracking-wide text-bnb-gold sm:block">VAPE CZ</span>
+          <img src="logo.png" alt="vape cz logo" class="smoke-bob h-11 w-11 rounded-full object-cover ring-2 ring-bnb-gold" />
+          <span class="smoke-text-gold hidden font-display text-2xl tracking-wide text-bnb-gold sm:block">VAPE CZ</span>
         </a>
         <nav class="hidden items-center gap-6 text-xs font-bold uppercase tracking-[0.22em] text-vapor/80 md:flex">
           <a href="#about" class="hover:text-bnb-gold">About</a>
@@ -302,7 +637,7 @@
             href="https://x.com/vapeczx"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-black ring-2 ring-bnb-gold"
+            class="icon-smoke flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-black ring-2 ring-bnb-gold"
             aria-label="X"
           >
             <img src="x.png" alt="X" class="h-5 w-5 object-contain" />
@@ -316,7 +651,7 @@
             Chart
           </a>
           <a
-            href="https://flap.sh/bnb/TBA"
+            href="https://pancakeswap.finance/swap?outputCurrency=TBA"
             target="_blank"
             rel="noopener noreferrer"
             class="vape-btn bg-bnb-yellow px-4 py-2 text-[11px] text-navy shadow-glow"
@@ -345,7 +680,7 @@
 
     <div class="content">
       <div class="mt-[4.6rem] overflow-hidden border-y border-navy/15 bg-navy text-bnb-gold">
-        <div class="ticker-track flex w-max gap-10 whitespace-nowrap py-2 font-display text-lg tracking-[0.28em]">
+        <div class="ticker-track smoke-text-gold flex w-max gap-10 whitespace-nowrap py-2 font-display text-lg tracking-[0.28em]">
           <span>VAPE CZ · $VCZ · BNB CHAIN · SMOKY MEMES · BINANCE ENERGY · UNSTOPPABLE VIBES · HIT THE PUMP ·</span>
           <span>VAPE CZ · $VCZ · BNB CHAIN · SMOKY MEMES · BINANCE ENERGY · UNSTOPPABLE VIBES · HIT THE PUMP ·</span>
         </div>
@@ -354,25 +689,25 @@
       <main id="top">
         <section class="relative mx-auto max-w-6xl px-4 pb-10 pt-10 sm:px-6 lg:pt-14">
           <div class="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-            <div>
+            <div class="smoke-reveal is-in">
               <p
-                class="inline-flex items-center gap-2 rounded-full bg-navy px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.32em] text-tie-glow ring-1 ring-tie/50"
+                class="smoke-bob inline-flex items-center gap-2 rounded-full bg-navy px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.32em] text-tie-glow ring-1 ring-tie/50"
               >
-                <span class="h-2 w-2 rounded-full bg-bnb-gold shadow-glow"></span>
+                <span class="live-dot h-2 w-2 rounded-full bg-bnb-gold shadow-glow"></span>
                 Live on BNB Chain
               </p>
-              <h1 class="mt-5 font-display text-[4.4rem] leading-[0.86] text-navy sm:text-8xl lg:text-[7.4rem]">
+              <h1 class="smoke-text mt-5 font-display text-[4.4rem] leading-[0.86] text-navy sm:text-8xl lg:text-[7.4rem]">
                 VAPE
                 <span class="block text-transparent bg-clip-text bg-gradient-to-r from-navy via-navy-mist to-tie">CZ</span>
               </h1>
-              <p class="mt-2 font-display text-4xl tracking-[0.18em] text-navy/80 sm:text-5xl">$VCZ</p>
+              <p class="smoke-text mt-2 font-display text-4xl tracking-[0.18em] text-navy/80 sm:text-5xl">$VCZ</p>
               <p class="mt-5 max-w-xl text-lg font-medium leading-relaxed text-navy/80 sm:text-xl">
                 vape cz brings bold Binance energy, smoky memes, and unstoppable BNB Chain vibes.
               </p>
 
               <div class="mt-8 flex flex-wrap items-center gap-3">
                 <a
-                  href="https://flap.sh/bnb/TBA"
+                  href="https://pancakeswap.finance/swap?outputCurrency=TBA"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="vape-btn bg-navy px-8 py-3.5 text-sm text-bnb-gold shadow-pod hover:bg-navy-deep"
@@ -389,7 +724,7 @@
                 </a>
               </div>
 
-              <div class="mt-8 flex max-w-xl items-stretch overflow-hidden rounded-full bg-navy shadow-pod ring-2 ring-bnb-gold">
+              <div class="ca-shell mt-8 flex max-w-xl items-stretch overflow-hidden rounded-full bg-navy ring-2 ring-bnb-gold">
                 <div class="min-w-0 flex-1 px-5 py-3">
                   <p class="text-[10px] font-bold uppercase tracking-[0.32em] text-tie">Contract · Copy CA</p>
                   <p id="ca-display" class="truncate font-mono text-lg text-bnb-gold sm:text-xl">TBA</p>
@@ -404,7 +739,7 @@
               </div>
             </div>
 
-            <div class="relative mx-auto w-full max-w-md">
+            <div class="smoke-float relative mx-auto w-full max-w-md">
               <div class="exhale pointer-events-none absolute -left-8 top-6 h-28 w-40 rounded-full bg-white/50 blur-2xl"></div>
               <div class="exhale pointer-events-none absolute -right-4 bottom-16 h-24 w-36 rounded-full bg-tie/40 blur-2xl" style="animation-delay: -2.4s"></div>
               <div class="absolute inset-6 rounded-full bg-gradient-to-br from-bnb-gold via-tie/40 to-navy/20 blur-2xl"></div>
@@ -413,7 +748,7 @@
                 alt="vape cz — CZ hitting the vape"
                 class="coil-glow relative z-10 w-full rounded-[2.4rem] object-cover ring-4 ring-navy shadow-pod"
               />
-              <div class="absolute -bottom-4 left-1/2 z-20 -translate-x-1/2 rounded-full bg-navy px-5 py-2 font-display text-xl tracking-[0.3em] text-bnb-gold shadow-glow">
+              <div class="smoke-text-gold absolute -bottom-4 left-1/2 z-20 -translate-x-1/2 rounded-full bg-navy px-5 py-2 font-display text-xl tracking-[0.3em] text-bnb-gold shadow-glow">
                 TAKE A HIT
               </div>
             </div>
@@ -421,36 +756,36 @@
         </section>
 
         <section class="relative mx-auto max-w-6xl px-4 pb-6 sm:px-6">
-          <div class="overflow-hidden rounded-[2.2rem] border-[3px] border-navy shadow-pod">
-            <img src="banner.png" alt="vape cz banner — VCZ fire and smoke" class="h-[34vh] w-full object-cover sm:h-[46vh]" />
+          <div class="banner-wrap smoke-reveal overflow-hidden rounded-[2.2rem] border-[3px] border-navy shadow-pod">
+            <img src="banner.jpg" alt="vape cz banner — VCZ fire and smoke" class="h-[34vh] w-full object-cover sm:h-[46vh]" />
           </div>
         </section>
 
         <section id="about" class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <div class="mb-10 max-w-2xl">
-            <p class="font-display text-xl tracking-[0.35em] text-navy/60">THE CLOUD</p>
-            <h2 class="font-display text-5xl leading-none text-navy sm:text-6xl">SMOKE THE NARRATIVE</h2>
+          <div class="smoke-reveal mb-10 max-w-2xl">
+            <p class="smoke-text font-display text-xl tracking-[0.35em] text-navy/60">THE CLOUD</p>
+            <h2 class="smoke-text font-display text-5xl leading-none text-navy sm:text-6xl">SMOKE THE NARRATIVE</h2>
             <p class="mt-4 text-lg font-medium text-navy/75">
               Navy suit. Gold chain energy. A little vapor on the lips. $VCZ is the BNB meme that inhales Binance heat and exhales unstoppable vibes.
             </p>
           </div>
           <div class="grid gap-4 md:grid-cols-3">
-            <article class="pod p-7 text-vapor">
-              <p class="font-display text-3xl text-bnb-gold">BOLD</p>
+            <article class="pod smoke-reveal smoke-card d1 p-7 text-vapor">
+              <p class="smoke-text-gold font-display text-3xl text-bnb-gold">BOLD</p>
               <h3 class="mt-1 font-display text-2xl tracking-wide text-tie-glow">BINANCE ENERGY</h3>
               <p class="mt-3 text-sm leading-relaxed text-vapor/75">
                 Yellow heat, CZ composure, and that signature BNB diamond pulse. The room fills up fast.
               </p>
             </article>
-            <article class="pod p-7 text-vapor">
-              <p class="font-display text-3xl text-bnb-gold">SMOKY</p>
+            <article class="pod smoke-reveal smoke-card d2 p-7 text-vapor">
+              <p class="smoke-text-gold font-display text-3xl text-bnb-gold">SMOKY</p>
               <h3 class="mt-1 font-display text-2xl tracking-wide text-tie-glow">MEME CLOUDS</h3>
               <p class="mt-3 text-sm leading-relaxed text-vapor/75">
                 One puff of culture. Glasses on, vape up, timeline fogged with $VCZ jokes that never quit.
               </p>
             </article>
-            <article class="pod p-7 text-vapor">
-              <p class="font-display text-3xl text-bnb-gold">CHAIN</p>
+            <article class="pod smoke-reveal smoke-card d3 p-7 text-vapor">
+              <p class="smoke-text-gold font-display text-3xl text-bnb-gold">CHAIN</p>
               <h3 class="mt-1 font-display text-2xl tracking-wide text-tie-glow">BNB VIBES</h3>
               <p class="mt-3 text-sm leading-relaxed text-vapor/75">
                 Built for BNB Smart Chain speed. Fund with BNB, take the hit, and ride the cloud.
@@ -461,15 +796,15 @@
 
         <section id="howtobuy" class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:py-14">
           <div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p class="font-display text-xl tracking-[0.35em] text-navy/60">FOUR HITS</p>
-              <h2 class="font-display text-5xl leading-none text-navy sm:text-6xl">HOW TO BUY $VCZ</h2>
+            <div class="smoke-reveal">
+              <p class="smoke-text font-display text-xl tracking-[0.35em] text-navy/60">FOUR HITS</p>
+              <h2 class="smoke-text font-display text-5xl leading-none text-navy sm:text-6xl">HOW TO BUY $VCZ</h2>
               <p class="mt-3 max-w-xl text-lg font-medium text-navy/75">
                 Four easy hits. Wallet, BNB, Flap, then inhale $VCZ. Always verify the CA before you swap.
               </p>
             </div>
             <a
-              href="https://flap.sh/bnb/TBA"
+              href="https://pancakeswap.finance/swap?outputCurrency=TBA"
               target="_blank"
               rel="noopener noreferrer"
               class="vape-btn w-fit bg-navy px-7 py-3 text-sm text-bnb-gold shadow-pod"
@@ -481,44 +816,44 @@
           <div class="relative grid gap-5 lg:grid-cols-4">
             <div class="hit-line pointer-events-none absolute left-[8%] right-[8%] top-11 hidden lg:block"></div>
 
-            <article class="relative rounded-[1.8rem] border-[3px] border-navy bg-vapor/70 p-6 shadow-pod backdrop-blur-sm">
-              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-navy font-display text-2xl text-bnb-gold shadow-glow">1</div>
-              <p class="text-3xl">👛</p>
-              <h3 class="mt-2 font-display text-3xl text-navy">GET A WALLET</h3>
+            <article class="smoke-card smoke-reveal d1 relative rounded-[1.8rem] border-[3px] border-navy bg-vapor/70 p-6 shadow-pod backdrop-blur-sm">
+              <div class="step-num mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-navy font-display text-2xl text-bnb-gold shadow-glow">1</div>
+              <p class="smoke-bob text-3xl">👛</p>
+              <h3 class="smoke-text mt-2 font-display text-3xl text-navy">GET A WALLET</h3>
               <p class="mt-2 text-sm font-medium leading-relaxed text-navy/75">
                 Install <strong>MetaMask</strong> or <strong>Trust Wallet</strong>. Switch the network to <strong>BNB Smart Chain</strong> — that is your vape battery.
               </p>
             </article>
 
-            <article class="relative rounded-[1.8rem] border-[3px] border-navy bg-vapor/70 p-6 shadow-pod backdrop-blur-sm">
-              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-navy font-display text-2xl text-bnb-gold shadow-glow">2</div>
-              <p class="text-3xl">🟡</p>
-              <h3 class="mt-2 font-display text-3xl text-navy">LOAD BNB</h3>
+            <article class="smoke-card smoke-reveal d2 relative rounded-[1.8rem] border-[3px] border-navy bg-vapor/70 p-6 shadow-pod backdrop-blur-sm">
+              <div class="step-num mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-navy font-display text-2xl text-bnb-gold shadow-glow">2</div>
+              <p class="smoke-bob text-3xl">🟡</p>
+              <h3 class="smoke-text mt-2 font-display text-3xl text-navy">LOAD BNB</h3>
               <p class="mt-2 text-sm font-medium leading-relaxed text-navy/75">
                 Buy <strong>BNB</strong> on Binance or any on-ramp, then send it to your wallet. No BNB, no cloud.
               </p>
             </article>
 
-            <article class="relative rounded-[1.8rem] border-[3px] border-navy bg-vapor/70 p-6 shadow-pod backdrop-blur-sm">
-              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-navy font-display text-2xl text-bnb-gold shadow-glow">3</div>
-              <p class="text-3xl">🔗</p>
-              <h3 class="mt-2 font-display text-3xl text-navy">OPEN FLAP</h3>
+            <article class="smoke-card smoke-reveal d3 relative rounded-[1.8rem] border-[3px] border-navy bg-vapor/70 p-6 shadow-pod backdrop-blur-sm">
+              <div class="step-num mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-navy font-display text-2xl text-bnb-gold shadow-glow">3</div>
+              <p class="smoke-bob text-3xl">🔗</p>
+              <h3 class="smoke-text mt-2 font-display text-3xl text-navy">OPEN FLAP</h3>
               <p class="mt-2 text-sm font-medium leading-relaxed text-navy/75">
-                Tap <strong>Buy Now</strong> to open <strong>Flap.sh</strong>. Connect the wallet and confirm you are on BNB Chain.
+                Tap <strong>Buy Now</strong> to open <strong>PancakeSwap</strong>. Connect the wallet and confirm you are on BNB Chain.
               </p>
             </article>
 
-            <article class="relative rounded-[1.8rem] border-[3px] border-navy bg-vapor/70 p-6 shadow-pod backdrop-blur-sm">
-              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-navy font-display text-2xl text-bnb-gold shadow-glow">4</div>
-              <p class="text-3xl">💨</p>
-              <h3 class="mt-2 font-display text-3xl text-navy">SWAP $VCZ</h3>
+            <article class="smoke-card smoke-reveal d4 relative rounded-[1.8rem] border-[3px] border-navy bg-vapor/70 p-6 shadow-pod backdrop-blur-sm">
+              <div class="step-num mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-navy font-display text-2xl text-bnb-gold shadow-glow">4</div>
+              <p class="smoke-bob text-3xl">💨</p>
+              <h3 class="smoke-text mt-2 font-display text-3xl text-navy">SWAP $VCZ</h3>
               <p class="mt-2 text-sm font-medium leading-relaxed text-navy/75">
                 Copy the <strong>CA</strong>, swap <strong>BNB → $VCZ</strong>, confirm the tx, and exhale. You are in the cloud.
               </p>
             </article>
           </div>
 
-          <div class="mt-8 flex flex-col overflow-hidden rounded-[1.6rem] bg-navy shadow-pod ring-2 ring-bnb-gold sm:flex-row sm:items-center">
+          <div class="ca-shell smoke-reveal mt-8 flex flex-col overflow-hidden rounded-[1.6rem] bg-navy sm:flex-row sm:items-center">
             <div class="min-w-0 flex-1 px-6 py-5">
               <p class="text-[10px] font-bold uppercase tracking-[0.32em] text-tie">Verify CA · no fake clouds</p>
               <p id="ca-display-2" class="truncate font-mono text-2xl text-bnb-gold">TBA</p>
@@ -535,9 +870,9 @@
 
         <section id="chart" class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
           <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p class="font-display text-xl tracking-[0.35em] text-navy/60">THE BOARD</p>
-              <h2 class="font-display text-5xl leading-none text-navy sm:text-6xl">$VCZ CHART</h2>
+            <div class="smoke-reveal">
+              <p class="smoke-text font-display text-xl tracking-[0.35em] text-navy/60">THE BOARD</p>
+              <h2 class="smoke-text font-display text-5xl leading-none text-navy sm:text-6xl">$VCZ CHART</h2>
               <p class="mt-3 max-w-xl font-medium text-navy/75">Live Dexscreener candles, embedded in the cloud chamber.</p>
             </div>
             <a
@@ -549,7 +884,7 @@
               Open Chart
             </a>
           </div>
-          <div class="overflow-hidden rounded-[2rem] border-[3px] border-navy bg-navy-deep shadow-pod">
+          <div class="chart-frame smoke-reveal overflow-hidden rounded-[2rem] border-[3px] border-navy bg-navy-deep shadow-pod">
             <div class="flex items-center justify-between bg-navy px-5 py-3">
               <p class="text-xs font-extrabold uppercase tracking-[0.28em] text-bnb-gold">$VCZ / BNB · Dexscreener</p>
               <span class="text-xs font-extrabold uppercase tracking-[0.28em] text-tie">Live vapor</span>
@@ -564,12 +899,12 @@
         </section>
 
         <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
-          <div class="pod relative overflow-hidden p-8 md:p-12">
+          <div class="pod smoke-reveal relative overflow-hidden p-8 md:p-12">
             <div class="exhale pointer-events-none absolute -right-10 top-0 h-40 w-56 rounded-full bg-tie/25 blur-3xl"></div>
             <div class="grid items-center gap-10 md:grid-cols-[1.15fr_0.85fr]">
               <div>
-                <p class="font-display text-xl tracking-[0.35em] text-tie">JOIN THE CLOUD</p>
-                <h2 class="mt-2 font-display text-5xl leading-none text-bnb-gold sm:text-6xl">EXHALE WITH CZ</h2>
+                <p class="smoke-text-gold font-display text-xl tracking-[0.35em] text-tie">JOIN THE CLOUD</p>
+                <h2 class="smoke-text-gold mt-2 font-display text-5xl leading-none text-bnb-gold sm:text-6xl">EXHALE WITH CZ</h2>
                 <p class="mt-4 max-w-xl text-lg font-medium text-vapor/80">
                   vape cz brings bold Binance energy, smoky memes, and unstoppable BNB Chain vibes. Copy the CA, hit Buy Now, and stay in the fog.
                 </p>
@@ -584,7 +919,7 @@
                     @vapeczx
                   </a>
                   <a
-                    href="https://flap.sh/bnb/TBA"
+                    href="https://pancakeswap.finance/swap?outputCurrency=TBA"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="vape-btn bg-bnb-yellow px-6 py-3 text-xs text-navy shadow-glow"
@@ -596,7 +931,7 @@
               <img
                 src="logo.png"
                 alt="vape cz mascot"
-                class="mx-auto w-56 rounded-[2rem] object-cover ring-4 ring-bnb-gold md:w-72"
+                class="coil-glow smoke-float mx-auto w-56 rounded-[2rem] object-cover ring-4 ring-bnb-gold md:w-72"
               />
             </div>
           </div>
@@ -606,9 +941,9 @@
       <footer class="border-t border-navy/20 bg-navy text-vapor">
         <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <div class="flex items-center gap-3">
-            <img src="logo.png" alt="" class="h-12 w-12 rounded-full object-cover ring-2 ring-bnb-gold" />
+            <img src="logo.png" alt="" class="smoke-bob h-12 w-12 rounded-full object-cover ring-2 ring-bnb-gold" />
             <div>
-              <p class="font-display text-2xl tracking-wide text-bnb-gold">VAPE CZ</p>
+              <p class="smoke-text-gold font-display text-2xl tracking-wide text-bnb-gold">VAPE CZ</p>
               <p class="text-[11px] font-bold uppercase tracking-[0.28em] text-tie">$VCZ · BNB CHAIN</p>
             </div>
           </div>
@@ -617,7 +952,7 @@
               href="https://x.com/vapeczx"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-black ring-2 ring-bnb-gold"
+              class="icon-smoke flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-black ring-2 ring-bnb-gold"
             >
               <img src="x.png" alt="X" class="h-5 w-5 object-contain" />
             </a>
@@ -630,7 +965,7 @@
               Chart
             </a>
             <a
-              href="https://flap.sh/bnb/TBA"
+              href="https://pancakeswap.finance/swap?outputCurrency=TBA"
               target="_blank"
               rel="noopener noreferrer"
               class="vape-btn bg-bnb-yellow px-4 py-2 text-xs text-navy"
@@ -639,7 +974,7 @@
             </a>
           </div>
         </div>
-        <p class="px-4 pb-8 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-vapor/40">
+        <p class="smoke-text px-4 pb-8 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-vapor/40">
           $VCZ is a meme. Not financial advice. DYOR. Exhale at your own risk.
         </p>
       </footer>
@@ -686,6 +1021,26 @@
       mobileMenu.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
       });
+
+      const revealNodes = document.querySelectorAll(".smoke-reveal");
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        revealNodes.forEach((el) => el.classList.add("is-in"));
+      } else if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-in");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+        );
+        revealNodes.forEach((el) => io.observe(el));
+      } else {
+        revealNodes.forEach((el) => el.classList.add("is-in"));
+      }
 
       (function cigaretteSmoke() {
         const canvas = document.getElementById("smoke-canvas");
